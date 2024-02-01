@@ -1,0 +1,64 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job222234567
+  namespace: default
+  labels:
+    kueue.x-k8s.io/queue-name: user-queue
+spec:
+  parallelism: 3
+  completions: 3
+  template:
+    securityContext:
+      runAsUser: 0
+      runAsNonRoot: false
+      fsGroup: 0
+    spec:
+      volumes:
+      - name: script
+        hostPath:
+          path: /nfs/entry.sh
+          type: File
+      - name: workdir
+        hostPath:
+          path: /nfs/home/demo_admin
+          type: ""
+      - name: data
+        hostPath:
+          path: /nfs/home/demo_admin/data
+          type: ""
+      - name: algorithm
+        hostPath:
+          path: /nfs/home/demo_admin/algorithm
+          type: ""
+      - name: extramount
+        hostPath:
+          path: /nfs/home/demo_admin
+          type: ""
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - image: jupyter/minimal-notebook:latest
+        imagePullPolicy: IfNotPresent
+        name: job222234567
+        command: ["bash", "/opt/entry.sh", "20000", "k8s-master", "30001"]
+        env:
+        - name: WORK_DIR
+          value: /nfs/home/demo_admin
+        resources:
+          limits:
+            cpu: "1"
+            memory: "500Mi"
+        workingDir: /nfs/home/demo_admin
+        volumeMounts:
+        - mountPath: /opt/entry.sh
+          name: script
+        - mountPath: /nfs/home/demo_admin
+          name: workdir
+        - mountPath: /nfs/home/demo_admin/data
+          name: data
+        - mountPath: /nfs/home/demo_admin/algorithm
+          name: algorithm
+        - mountPath: /nfs/home/demo_admin
+          name: extramount
+      restartPolicy: OnFailure
