@@ -1,5 +1,5 @@
 # SCOW For AI 适配器配置文件
-当前版本中，我们提供了调度器适配器的试用版本的二进制文件[scow-ai-adapter-amd64](https://mirrors.pku.edu.cn/scow/releases/)，欢迎下载进行试用。
+当前 AI Beta 版本中，我们提供了调度器适配器的试用版本的二进制文件[scow-ai-adapter-amd64](https://mirrors.pku.edu.cn/scow/releases/)，欢迎下载进行试用。
 
 在**K8S调度器适配器**所在目录中配置以下信息。其中提交作业的模版文件，创建service的模板文件的示例请参考本项目中的配置文件
 
@@ -28,4 +28,4 @@ jobsvctemplatefilepath: /root/xxxx/job-service.yaml    # 创建service的模版�
 
 ```
 
-启动适配器及运维适配器与`slurm`适配器相同。请注意适配器所在路径及二进制文件名称变更，命令参考[启动管理slurm适配器](scow-slurm-adapter/docs/deploy.md at master · PKUHPC/scow-slurm-adapter)。
+启动适配器及运维适配器与`slurm`适配器相同。请注意适配器所在路径及二进制文件名称变更，命令参考[启动管理slurm适配器]([scow-slurm-adapter/docs/deploy.md at master · PKUHPC/scow-slurm-adapter](https://github.com/PKUHPC/scow-slurm-adapter/blob/master/docs/deploy.md#23-%E5%90%AF%E5%8A%A8slurm%E9%80%82%E9%85%8D%E5%99%A8))。
