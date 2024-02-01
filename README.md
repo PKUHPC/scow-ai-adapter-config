@@ -28,4 +28,4 @@ jobsvctemplatefilepath: /root/xxxx/job-service.yaml    # 创建service的模版�
 
 ```
 
-启动适配器及运维适配器与`slurm`适配器相同。请注意适配器所在路径及二进制文件名称变更，命令参考[启动管理slurm适配器]([scow-slurm-adapter/docs/deploy.md at master · PKUHPC/scow-slurm-adapter](https://github.com/PKUHPC/scow-slurm-adapter/blob/master/docs/deploy.md#23-%E5%90%AF%E5%8A%A8slurm%E9%80%82%E9%85%8D%E5%99%A8))。
+启动适配器及运维适配器与`slurm`适配器相同。请注意适配器所在路径及二进制文件名称变更，命令参考[启动管理slurm适配器](https://github.com/PKUHPC/scow-slurm-adapter/blob/master/docs/deploy.md#23-%E5%90%AF%E5%8A%A8slurm%E9%80%82%E9%85%8D%E5%99%A8)。
